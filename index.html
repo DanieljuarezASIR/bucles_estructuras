@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8"/>
+    <title>Prácticas con estructuras de control iterativas</title>
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"> <!-- enlaces de Boostrap-->
+<link href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" rel="stylesheet"> <!-- enlaces referentes a boostrap--> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- enlaces referentes a boostrap--> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><!-- enlaces referentes a boostrap utilizando jquery--> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  <!-- enlaces referentes a boostrap--> 
+    <style>
+    
+            table{   
+            
+     font-family: "Trebuchet MS", sans-serif;  /* Propiedad de la                                     fuente del tipo de letra*/
+    font-size: 26px;                    /* Propiedad referente al                                             tamaño de letra */
+    font-weight: bold;                        /* Establece el                                             grosor de las letras*/
+    line-height: 1.4em;                    /* establece el grosor                                                     de linea*/
+    font-style: normal;                        /* Establece el                                                 estilo de letra*/
+    border-collapse:separate;                /* Propiedad para                                             fusionar bordes*/
+            padding: 28px;                  /*Propiedad para el                                         relleno*/
+            
+        }
+        
+        
+        body {
+            background-image: url(orig_234758.jpg); /*Sirve para establecer la imagen de fondo*/
+             
+        }
+          
+        th{
+            
+    padding:15px; /* Sirv para colocar el relleno*/
+    color:#fff;     /* Establecemos el color deseado*/
+    text-shadow:1px 1px 1px #568F23; /* Establecemos la sombra del texto*/
+    border:1px solid #93CE37; /* Establecemos la propiedad y color del borde*/
+    border-bottom:3px solid #9ED929; /*Establece algunas o todas las propiedades del borde inferior de los elementos*/
+    background-color:#9DD929; /* Especifica el color de fondo*/
+    background:-webkit-gradient(  /*La propiedad background es un atajo para definir los valores individuales del fondo */
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.02, rgb(123,192,67)),
+        color-stop(0.51, rgb(139,198,66)),
+        color-stop(0.87, rgb(158,217,41))
+        );
+    background: -moz-linear-gradient(    /* Establecemos las distante propiedad que nos permite el fondo */
+        center bottom,
+        rgb(123,192,67) 2%,
+        rgb(139,198,66) 51%,
+        rgb(158,217,41) 87%
+        );
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-radius:5px 5px 0px 0px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+    
+        
+        
+        td {
+        color: #ff0000;            /* Propiedad que permite asignarle un color*/
+    font-size:38px;                /* Establecemos el tamaño de letra*/
+    text-align:center;            /*Ponemos la propiedad para ajustar el tex al centro*/
+    padding:10px 0px;            /*Establecemos un poco de relleno*/
+    text-shadow:1px 1px 1px #444;    /*Establecemos la sobra del texto y el color*/
+            padding-right: 50px;        /*Le asignamos relleno por la parte derecha*/
+        }
+       
+        
+        #tablaprincipal {
+          
+            border: 3px  blue;        /*Establecemos la propiedad del borde y el color*/
+            display: block;            /* hace que el comportamiento del elemento sea como un bloque.*/
+            font-size: 20px;            /*Establecemos el tamaño de la fuente*/
+            -webkit-border-radius: 50px;
+-moz-border-radius: 50px;                    /* Establecemos las distantas propiedad que nos ofrece el borde*/
+border-radius: 50px;
+            
+        }
+       
+            
+        
+        
+        
+        h1{
+        text-decoration: none;                    /*se usa para establecer el formato de texto*/
+    color: blue;                                    /* Se le asigna un color*/
+            font-family: fantasy,sans-serif;        /* Establecemos la fuente*/
+            font-size: 3.5rem;                        /* Establecemos el tamaño*/
+            text-align: center;                    /*Establecemos que el texto este centrado*/
+        }
+    
+      
+        h1:hover {
+            color: red;                            /*Asignamos un color al hover para obtener un efecto*/
+        }
+        h1{
+            transition: color 1.0s linear 0.2s;        /*Utilizamos transiciones css para obtener una imagen mas estetica del h1*/
+        }
+        
+        footer {
+            margin:120px;                            /*Establecemos un margen*/
+            text-align: center;                    /* Establecemos el texto en el centro*/
+            font-size: xx-large;                    /* Establecemos el tamaño de letra */
+            font-family: fantasy;                    /*Establecemos la fuente*/
+            /*font-small:blue;*/                        /* Propiedad de prueba */
+        }
+        p{
+            margin-top: 80px;                        /* Establecemos un margen por la parte superior*/
+            text-align: center;                    /* Establecemos el parrafo en el centro*/
+        
+        }
+        div.reproductor{
+            color:aqua;                        /*Establecemos un color al reproductor*/
+            margin-top: 45px;                    /*Se le asigna un margen superior*/
+            margin-left: 156px;                    /*Establecemos un margen izquierdo*/
+            display: none;                        /*Se usa para ocultar objetos*/
+        }
+    </style>
+</head>
+
+
+<body onload="Tabla()">
+    <h1>Prácticas con estructuras de control iterativas</h1>
+   
+    <div  class="table table-responsive-md">  <!-- Establece una clase para obtener el estilo de boostrap -->
+        <table class="table table-hover">     <!-- Establece una clase para obtener el estilo de tabla de boostrap -->   
+            <tr id="numero">
+                <td>Number</td>              <!-- Escribimos el nombre de las lineas deseadas-->
+            </tr>
+            <tr id="cuadrado">                <!-- Escribimos el nombre de las lineas deseadas-->
+                <td>square</td>
+            </tr>
+            <tr id="cubo">
+                <td>cubes</td>                <!-- Escribimos el nombre de las lineas deseadas-->
+            </tr>
+            
+        </table>
+
+    </div>
+   
+    <script  src="numeros.js"></script>            <!-- Este recurso hace referencia al javascript externo-->
+<audio src="Sadmoodish-Dream.mp3" autoplay controls>    <!-- Nos permite crear el reproductor de manera sencilla con la etique audio-->
+        <p>Navegador soportado</p> </audio>                <!-- El audio no lo soporta chrome y SI Firefox -->
+
+
+    
+
+        
+<footer>
+   
+  <div class="footer-copyright text-center py-3">&copy; 2018 Copyright:
+      <a href="https://mdbootstrap.com/bootstrap-tutorial/"> MDBootstrap.com |<span>Daniel Juárez</span>| </a>
+  </div>
+  <!-- Este footer contiene el diseño de un boostrap cogido de estas paginas que contienen tambien jquery y asi obtener una mejor presentacion
+  con los enlaces externos-->
+   
+   Información: 
+    <a href="https://github.com/DanieljuarezASIR"><span class="label label-info">Daniel</span></a> 
+	<a href="#"><span class="label label-info">Bootstrap</span></a> 
+	<a href="#"><span class="label label-info">Numeros,cuadrados,cubos</span></a>         <!--Esta informacion hace referencia a la parte del footer de la información de contacto puesta en manos del visitante para hacer mas atractiva la pagina -->
+	<a href="#"><span class="label label-info">IAW</span></a>
+	| <i class="icon-user"></i> <a href="https://github.com/DanieljuarezASIR">Daniel</a> 
+	| <i class="icon-calendar"></i><a href="descarga.png"> Sept 23th, 2018 at 18:20 pm</a>
+   	| <i class="icon-face"></i><a href="https://www.facebook.com/groups/ExpertosProgramadores/" target="_blank"><img alt="siguenos en facebook" height="40" src="face.png" title="siguenos en facebook" width="40" /></a>
+    
+</footer>
+</body>
+</html>
